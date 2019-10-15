@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const port = process.env.PORT || 3002;
 const { retrieveByBiz, retrieveByUser, retrieve1Review } = require('../db/dbReviews');
 const { saveUsers, retrieveUsersById } = require('../db/dbUsers');
+require('dotenv').config();
+const port = process.env.PORT || 3002;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
